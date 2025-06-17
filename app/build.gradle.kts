@@ -41,18 +41,24 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.appcompat)
+
+
+    // Dependencias para Jetpack Compose
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
+    implementation(platform(libs.androidx.compose.bom)) // Para configurar el BOM de Compose
+    implementation(libs.androidx.ui) // Dependencias necesarias de Compose
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.material3) // Para material components con Compose
+
+    // Test dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(platform(libs.androidx.compose.bom)) // Para tests de Compose
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
